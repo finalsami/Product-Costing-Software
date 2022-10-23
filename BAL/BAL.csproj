@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{213CCAC9-ECF1-45E4-8FED-F69F95D11877}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BAL</RootNamespace>
+    <AssemblyName>BAL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BulkCostBAL.cs" />
+    <Compile Include="BulkProductMasterBAL.cs" />
+    <Compile Include="BulkRecipeBOMBAL.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="CompanyMappingBALcs.cs" />
+    <Compile Include="CompanyMasterBAL.cs" />
+    <Compile Include="CostVariableMasterBAL.cs" />
+    <Compile Include="FactoryexpenceBAL.cs" />
+    <Compile Include="FormulationMasterBAL.cs" />
+    <Compile Include="MRPBAL.cs" />
+    <Compile Include="PriceListGPActualEstimateBAL.cs" />
+    <Compile Include="ProductCategoryBAL.cs" />
+    <Compile Include="ProductcategoryBulkMappingBAL.cs" />
+    <Compile Include="RMEstimateDetailBAL.cs" />
+    <Compile Include="RMEstimateBAL.cs" />
+    <Compile Include="RMPriceEstimateBAL.cs" />
+    <Compile Include="TermsConditionBAL.cs" />
+    <Compile Include="TradeBAL.cs" />
+    <Compile Include="MainCategoryBAL.cs" />
+    <Compile Include="OtherCompanyPriceListBAL.cs" />
+    <Compile Include="PackingCategoryBAL.cs" />
+    <Compile Include="PackingDifferenceBAL.cs" />
+    <Compile Include="PackingMaterialBAL.cs" />
+    <Compile Include="PackingMaterialCostBAL.cs" />
+    <Compile Include="PackingSizeCategoryBAL.cs" />
+    <Compile Include="PackingStyleLabourCostingMasterBAL.cs" />
+    <Compile Include="PackingStyleNameBAL.cs" />
+    <Compile Include="PMRMCategoryBAL.cs" />
+    <Compile Include="PMRMMasterBAL.cs" />
+    <Compile Include="PMRMPriceMasterBAL.cs" />
+    <Compile Include="ProductInterestMasterBAL.cs" />
+    <Compile Include="ProductwiseLabourCostBAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReturnMessage.cs" />
+    <Compile Include="RMCategoryBAL.cs" />
+    <Compile Include="RMMasterBAL.cs" />
+    <Compile Include="RMPriceMasterBAL.cs" />
+    <Compile Include="RoleMasterBAL.cs" />
+    <Compile Include="StateWiseCostFactorBAL.cs" />
+    <Compile Include="TrasportationCostMasterBAL.cs" />
+    <Compile Include="TradeBulkMappingBAL.cs" />
+    <Compile Include="UserBAL.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

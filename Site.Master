@@ -1,0 +1,211 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Production_Costing_Software.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="dist/css/adminlte.min.css" />
+    <link rel="stylesheet" href="content/css/common.css" />
+    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-fixedheader/css/fixedHeader.bootstrap4.min.css">
+
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="dist/js/adminlte.min.js"></script>
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="plugins/datatables-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+
+</head>
+<body class="hold-transition layout-top-nav">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="wrapper">
+
+            <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+                <div class="container col-md-12">
+                    <a href="welcome.aspx" class="navbar-brand">
+                        <%-- <img src="content/images/emen logo.png" alt="EMEN RETAIL INFOTECH PVT.LTD" class="brand-image" style="opacity: .8;height:25px!important">
+        <span class="brand-text font-weight-light" style="font-weight:800!important"><b></b></span>--%>
+                        <h1 class="text-success">PCS</h1>
+                    </a>
+
+                    <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+
+                        <ul class="navbar-nav" id="ulmain" runat="server">
+
+                            <li class="nav-item dropdown">
+                                <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle mainmenu">Price Master</a>
+                                <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+                                    <li><a href="RMPriceMaster.aspx" class="dropdown-item">RM Price Master</a></li>
+                                    <li><a href="PMRMPriceMaster.aspx" class="dropdown-item">PM RM Price Master</a></li>
+                                    <li><a href="RMPriceEstimate.aspx" class="dropdown-item text-success">RM Price Estimate</a></li>
+                                    <%--              <li><a href="PMRMPriceEstimate.aspx" class="dropdown-item">PM RM Price Estimate</a></li>      --%>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="dropdownSubMenu2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle mainmenu">Cost</a>
+                                <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
+                                    <li><a href="CostVariableMaster.aspx" class="dropdown-item">Cost Variable Master</a></li>
+                                    <li><a href="BulkRecipeBOM.aspx" class="dropdown-item">BulkRecipe(BOM)</a></li>
+                                    <li><a href="ProductwiseLabourCostMaster.aspx" class="dropdown-item">Productwise Labour Cost</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a id="dropdownSubMenu3" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle mainmenu">Reporting</a>
+                                <ul aria-labelledby="dropdownSubMenu3" class="dropdown-menu border-0 shadow">
+                                    <li><a href="FinishGoodsPricingReport.aspx" class="dropdown-item">Finish Goods Pricing Report</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="dropdownSubMenu4" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle mainmenu">Categories</a>
+                                <ul aria-labelledby="dropdownSubMenu4" class="dropdown-menu border-0 shadow">
+                                    <li><a href="MainCategory.aspx" class="dropdown-item">Main Category</a></li>
+                                    <li><a href="RMCategory.aspx" class="dropdown-item">RM Category</a></li>
+                                    <li><a href="PMRMCategory.aspx" class="dropdown-item">PM RM Category</a></li>
+                                    <li><a href="PackingCategory.aspx" class="dropdown-item">Packing Category</a></li>
+                                    <li><a href="PackingSizeCategory.aspx" class="dropdown-item">Packing Size Category Master</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="dropdownSubMenu5" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle mainmenu">Masters</a>
+                                <ul aria-labelledby="dropdownSubMenu5" class="dropdown-menu border-0 shadow">
+                                    <li><a href="RMMaster.aspx" class="dropdown-item">RM Master</a></li>
+                                    <li><a href="BulkProductMaster.aspx" class="dropdown-item">Bulk Product Master</a></li>
+                                    <li><a href="FormulationMaster.aspx" class="dropdown-item">Formulation Master</a></li>
+                                    <li><a href="ProductInterestMaster.aspx" class="dropdown-item">Product Interest Master</a></li>
+                                    <li><a href="PMRMMaster.aspx" class="dropdown-item">PM RM Master</a></li>
+                                    <li><a href="PackingStyleName.aspx" class="dropdown-item">Packing Style Name</a></li>
+                                    <li><a href="ProductPackingMaterialMaster.aspx" class="dropdown-item">Product Packing Material Master</a></li>
+                                    <li><a href="PackingStyleLabourCostingMaster.aspx" class="dropdown-item">Packing Style Labour & Power Costing Master</a></li>
+                                    <li><a href="PackingDifferenceMaster.aspx" class="dropdown-item">Packing Difference Master</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="dropdownSubMenu6" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle mainmenu">Company</a>
+                                <ul aria-labelledby="dropdownSubMenu6" class="dropdown-menu border-0 shadow">
+                                    <li><a href="CompanyMaster.aspx" class="dropdown-item">Company Master</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="dropdownSubMenu7" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle mainmenu">User Management</a>
+                                <ul aria-labelledby="dropdownSubMenu7" class="dropdown-menu border-0 shadow">
+                                    <li><a href="UserMaster.aspx" class="dropdown-item">User</a></li>
+                                    <li><a href="RoleMaster.aspx" class="dropdown-item">Role</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="dropdownSubMenu8" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle mainmenu">Price Estimate</a>
+                                <ul aria-labelledby="dropdownSubMenu8" class="dropdown-menu border-0 shadow">
+                                    <li><a href="RMEstimate.aspx" class="dropdown-item disabled">RM Estimation</a></li>
+                                    <li><a href="#" class="dropdown-item disabled">PM RM Estimation</a></li>
+                                    <li><a href="PriceListGPActual.aspx" class="dropdown-item disabled">Price List GP (Actual)</a></li>
+                                    <li><a href="#" class="dropdown-item disabled">PriceList Other Actual</a></li>
+                                    <li><a href="MRP.aspx" class="dropdown-item">MRP Price</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="dropdownSubMenu9" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle mainmenu">Price List</a>
+                                <ul aria-labelledby="dropdownSubMenu9" class="dropdown-menu border-0 shadow">
+                                    <li><a href="#" class="dropdown-item">Price List Report</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="collapse navbar-collapse order-3" id="navbarCollapse2">
+
+                        <ul class="order-1 order-md-6 navbar-nav navbar-no-expand ml-auto" style="padding-top: 10px">
+
+                            <li class="nav-item dropdown">
+                                <asp:DropDownList ID="drpcompany" CssClass="form-control companylist" AutoPostBack="true" OnSelectedIndexChanged="drpcompany_SelectedIndexChanged" runat="server"></asp:DropDownList>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <p class="nav-link" style="padding-right: 0px!important" data-toggle="dropdown">
+                                    Welcome 
+                                </p>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <p class="nav-link text-primary" style="padding-left: 8px!important" data-toggle="dropdown">
+                                    <b><%=userName %> </b>
+                                </p>
+                            </li>
+                            <li>
+                                <asp:LinkButton CssClass="btn btn-block btn-outline-danger btn-sm" ID="lnklogout" runat="server" OnClientClick="return confirm('Are you sure you want to Logout from system?');" Text="LogOut" OnClick="lnklogout_Click"></asp:LinkButton>
+                            </li>
+                            <li style="padding-left: 8px!important">
+                                <asp:Button ID="btnPCSSitemap" OnClick="btnPCSSitemap_Click" CssClass=" text-dark btn btn-block btn-outline-info btn-sm" Style="box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.4); color: whitesmoke" runat="server" Text="PCS UserManual" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="content-wrapper">
+
+                <div class="content">
+                    <div class="container  col-sm-12">
+                        <div class="row">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <footer class="main-footer">
+
+                <div class="float-right d-none d-sm-inline">
+                    V 1.0.0
+                </div>
+
+                <strong>Copyright &copy; <%=year %> <a target="_blank" href="#">GP Crop Care</a>.</strong> All rights reserved.
+            </footer>
+        </div>
+    </form>
+
+    <style>
+        .modalLoading {
+            position: fixed;
+            z-index: 1030;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            opacity: 0.6;
+        }
+
+        .centerLoading {
+            z-index: 1031;
+            width: 300px;
+            opacity: 0.9;
+        }
+
+            .centerLoading img {
+                height: 150px;
+                width: 250px;
+            }
+    </style>
+
+</body>
+</html>

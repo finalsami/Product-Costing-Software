@@ -1,0 +1,59 @@
+﻿.mainmenu {
+    font-size: 16px !important;
+    color: #007bff !important;
+}
+.gridview td {
+    padding: .45rem!important;
+}
+.ui-widget-content {
+    border: 1px solid #eeeeee;
+    background: #ffffff 50% 50% repeat-x;
+    color: #333333;
+    width: 40%;
+   
+}
+
+
+
+.ui-menu {
+    list-style: none;
+    padding: 2px;
+    margin: 0;
+    display: block;
+    outline: none;
+    z-index: 10000 !important;
+}
+
+ui-menu-item
+{
+    padding:7px 0px;
+    font-size:11px;
+}
+
+.ui-menu-item:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.rbl input[type="radio"] {
+    margin-left: 10px;
+    margin-right: 1px;
+}
+.modal-dialog h5 {
+    margin-top: 30px !important;
+}
+
+.modal-dialog table td {
+    text-align: center;
+}
+
+.modal-dialog table th {
+    text-align: center;
+}
+.companylist {
+    border: solid 2px #28a745 !important;
+    font-weight: bold !important;
+    color: #28a745 !important;
+    font-size: 18px !important;
+    width:auto;
+}
